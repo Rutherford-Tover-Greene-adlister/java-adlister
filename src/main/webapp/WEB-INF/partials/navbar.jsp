@@ -6,7 +6,7 @@
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
-<%--            <jsp:useBean id="user" scope="request" type=""/>--%>
+            <%--            <jsp:useBean id="user" scope="request" type=""/>--%>
             <c:if test="${not empty user}">
                 <li><a href="/logout">Logout</a></li>
             </c:if>

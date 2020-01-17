@@ -1,6 +1,8 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -17,9 +19,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -41,11 +43,12 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id,category_id, title, description) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            stmt.setLong(2, ad.getCategory_id());
+            stmt.setString(3, ad.getTitle());
+            stmt.setString(4, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -57,10 +60,12 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description")
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getLong("category_id"),
+                getCategoryName(rs.getLong("category_id")),
+                rs.getString("title"),
+                rs.getString("description")
         );
     }
 
@@ -71,4 +76,28 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    private String getCategoryName(long category_id){
+        String query = "SELECT * FROM categories WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, category_id);
+             Category cat = extractCategory(stmt.executeQuery());
+             return cat.getCategory();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a category by its ID", e);
+        }
+    }
+
+    private Category extractCategory(ResultSet rs) throws SQLException {
+        if (!rs.next()) {
+            return null;
+        }
+        return new Category(
+                rs.getLong("id"),
+                rs.getString("category")
+        );
+    }
+
+
 }
