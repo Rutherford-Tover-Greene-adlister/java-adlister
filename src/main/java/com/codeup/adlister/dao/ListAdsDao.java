@@ -1,18 +1,28 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
+    private List<Category> categories;
 
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
         }
         return ads;
+    }
+
+    @Override
+    public List<Category> allCategories() {
+        if (categories == null){
+
+        }
+        return categories;
     }
 
     public Long insert(Ad ad) {

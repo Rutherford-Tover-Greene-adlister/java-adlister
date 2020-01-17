@@ -8,6 +8,7 @@
         <ul class="nav navbar-nav navbar-right">
             <%--            <jsp:useBean id="user" scope="request" type=""/>--%>
             <c:if test="${not empty user}">
+                <li><a href="/profile">Profile</a></li>
                 <li><a href="/logout">Logout</a></li>
             </c:if>
             <c:if test="${empty user}">
