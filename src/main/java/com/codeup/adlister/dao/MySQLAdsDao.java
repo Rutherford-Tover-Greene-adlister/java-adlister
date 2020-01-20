@@ -18,7 +18,7 @@ public class MySQLAdsDao implements Ads {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
                 config.getUrl(),
-                config.getUser(),
+                config.getUsername(),
                 config.getPassword()
             );
         } catch (SQLException e) {
@@ -53,6 +53,37 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    @Override
+    public void deleteEntry(long id) {
+        String query = "DELETE FROM ads where id = ?";
+
+        try {
+            PreparedStatement stm = connection.prepareStatement(query);
+            stm.setLong(1, id);
+            stm.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting your ad.", e);
+        }
+
+    }
+
+    @Override
+    public Ad singleAd(long id) {
+        String query = "Select * FROM ads where id = ?";
+
+        try {
+            PreparedStatement stm = connection.prepareStatement(query);
+            stm.setLong(1, id);
+            ResultSet result = stm.executeQuery();
+            return createAdsFromResults(result).get(0);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error getting ad.", e);
+        }
+
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {

@@ -16,6 +16,11 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+                <%-- View Ad Button --%>
+            <form action="/ads/singleAd" method="get">
+                <input type="hidden" name="adId" value="${ad.id}" >
+                <input type="submit" value="View">
+            </form>
         </div>
     </c:forEach>
 </div>
