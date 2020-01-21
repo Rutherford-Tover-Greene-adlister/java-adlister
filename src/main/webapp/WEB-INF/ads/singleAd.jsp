@@ -22,28 +22,60 @@
 <p> TestAofoasijfoasjdfoasif </p>
     <div class="container">
             <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <p>${ad.description}</p>
+                <form action="/ads/editAd" method="post">
+                    <input type="hidden"  name="adId" value="${ad.id}" >
+                    <input id="title" name="title" type="text" disabled value="${ad.title}">
+                    <input id="description"  name="description" type="text" disabled value="${ad.description}">
+                    <input type="submit" id="submitButton" value="Save" style="display: none;">
+                </form>
 
-<%--                Delete Button --%>
+                    <%--  Delete Button --%>
                 <form action="/ads/deleteAd" method="post">
-                    <input type="hidden" name="adId" value="${ad.id}" >
+                    <input type="hidden" id = "deleteButton" name="adId" value="${ad.id}" >
 <%--                 <input type="button" value="click here to open modal window" id="loader"/>--%>
                     <input type="submit" value="Delete">
                 </form>
+                <%-- Edit Button --%>
+                <button id ="editButton">Edit</button>
 
+
+
+
+
+<%--                <form action="/ads/editAd" method="post">--%>
+<%--                    <input type="hidden" name="editId" value="${ad.id}" >--%>
+<%--                    &lt;%&ndash;                 <input type="button" value="click here to open modal window" id="loader"/>&ndash;%&gt;--%>
+<%--                    <input type="submit" value="Edit">--%>
+<%--                </form>--%>
 
             </div>
     </div>
 <script>
         $(document).ready(function(){
-            $("#loader").click(function(){
-                // Load the page into the div
-                $("#resultreturn").load("b.html");
-                // Show the modal dialog
-                $("#resultreturn").dialog({ modal: true });
+            $('#editButton').click(function(){
+                if ($('#title').attr('disabled'))
+                    $('#title').removeAttr('disabled');
+                else $('#title').attr('disabled', 'disabled');
+
+                if ($('#description').attr('disabled'))
+                    $('#description').removeAttr('disabled');
+                else $('#description').attr('disabled', 'disabled');
+
             });
         });
+
+        $(document).ready(function () {
+            $('#editButton').click(function () {
+                $("#submitButton").show();
+            })
+        });
+        $(document).ready(function () {
+            $('#editButton').click(function () {
+                $("#deleteButton").hide();
+            })
+        });
+
+
 </script>
 
 
