@@ -11,25 +11,20 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.AdsIndexServlet", urlPatterns = "/ads")
 public class AdsIndexServlet extends HttpServlet {
+    private String searchCat = "all";
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String category = request.getParameter("searchCat");
-        if(category != null || !category.equalsIgnoreCase("all")){
-
-            request.setAttribute("ads",DaoFactory.getAdsDao().SearchByCategory(category));
+        if(!searchCat.equalsIgnoreCase("all")){
+            request.setAttribute("ads",DaoFactory.getAdsDao().SearchByCategory(searchCat));
         }else {
             request.setAttribute("ads", DaoFactory.getAdsDao().all());
         }
-//        String cat = request.getSession().getAttribute("searchCat");
         request.setAttribute("catSelects", DaoFactory.getAdsDao().allCategories());
         request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String category = request.getParameter("catSort");
-//        request.getSession().setAttribute("searchCat", category);
-
-        String redirectVal = "/ads?searchCat=" + category;
-        response.sendRedirect(redirectVal);
+        searchCat = request.getParameter("catSort");
+        response.sendRedirect("/ads");
 
     }
 }
