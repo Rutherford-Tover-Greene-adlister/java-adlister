@@ -76,18 +76,18 @@ public class MySQLUsersDao implements Users {
 //        } catch (SQLException e) {
 //            return true;
 //        }
-        String query = "SELECT count(*) FROM users WHERE username = ? LIMIT 1";
+        String query = "SELECT count(*) FROM users WHERE username = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, username);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()){
                 int count = rs.getInt(1);
-//                if (count >= 1){
-                    return false;
-//                }
+                if (count >= 1){
+                    return true;
+                }
             }
-            return true;
+            return false;
         } catch (SQLException e) {
             throw new RuntimeException("Error checking if username is unique", e);
         }
@@ -98,6 +98,12 @@ public class MySQLUsersDao implements Users {
 //        if(resultSet.next()) {
 //            final int count = resultSet.getInt(1);
 //        }
+    }
+
+    public static void main(String[] args) {
+//        User user = new User("admin","randomemail","password");
+        String username = "admin";
+        System.out.println(DaoFactory.getUsersDao().checkUniqueUser(username));
     }
 
 

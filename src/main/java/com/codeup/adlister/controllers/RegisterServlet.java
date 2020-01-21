@@ -30,6 +30,7 @@ public class RegisterServlet extends HttpServlet {
                 || DaoFactory.getUsersDao().checkUniqueUser(username);
 
         if (inputHasErrors) {
+//            alert goes here
             response.sendRedirect("/register");
             return;
         }
