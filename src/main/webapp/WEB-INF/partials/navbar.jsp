@@ -16,26 +16,39 @@
         <ul class="nav navbar-nav navbar-right">
 
          <div id="NavLoginLogoutContainer">
+            <c:if test="${empty user}">
             <div id="NavLoginContainer">
-             <li><a href="/login"id="NavLogin" class="NavFontLoginLogout">
-                 <div id="WordLogin">
-                     Login
+             <li><a href="/register"id="NavRegister" class="NavFontLoginLogout">
+                 <div id="WordRegister">
+                     Register
                  </div></a></li>
+                </div><hr>
+                <div id="NavLogoutContainer">
+                    <li><a href="/login" id="NavLogin" class="NavFontLoginLogout">Login</a></li>
+                </div>
+            </c:if>
+            <c:if test="${not empty user}">
+                <div id="NavLoginContainer">
+                <li><a href="/profile"id="NavProfile" class="NavFontLoginLogout">
+                <div id="WordProfile">
+                Profile
+                </div></a></li>
                 </div><hr>
              <div id="NavLogoutContainer">
              <li><a href="/logout" id="NavLogout" class="NavFontLoginLogout">Logout</a></li>
              </div>
+            </c:if>
          </div>
 
             <%--            <jsp:useBean id="user" scope="request" type=""/>--%>
-<!--             <c:if test="${not empty user}">
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </c:if>
-            <c:if test="${empty user}">
-                <li><a href="/register">Register</a></li>
-                <li><a href="/login">Login</a></li>
-            </c:if> -->
+<%--           <c:if test="${not empty user}">--%>
+<%--                <li><a href="/profile">Profile</a></li>--%>
+<%--                <li><a href="/logout">Logout</a></li>--%>
+<%--            </c:if>--%>
+<%--            <c:if test="${empty user}">--%>
+<%--                <li><a href="/register">Register</a></li>--%>
+<%--                <li><a href="/login">Login</a></li>--%>
+<%--            </c:if>--%>
 
         </ul>
     </div><!-- /.navbar-collapse -->
