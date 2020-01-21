@@ -4,9 +4,9 @@ public class Category {
     private long id;
     private String category;
 
-    public Category(long id, String category){
+    public Category(long id, String cat){
         this.id = id;
-        this.category = category;
+        this.category = cat;
     }
 
     public void setId(long id) {
@@ -21,7 +21,7 @@ public class Category {
         return category;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory(String cat) {
+        this.category = cat;
     }
 }

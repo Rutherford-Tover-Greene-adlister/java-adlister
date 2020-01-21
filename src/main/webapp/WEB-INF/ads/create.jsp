@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="categories">Category</label>
-            <select multiple id="categories" class="form-control">
+            <select id="categories" class="form-control">
                 <c:forEach var="cat" items="${cats}">
                     <option>${cat.category}</option>
                 </c:forEach>

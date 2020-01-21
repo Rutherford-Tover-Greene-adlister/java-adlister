@@ -111,13 +111,27 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Category extractCategory(ResultSet rs) throws SQLException {
+//        if (!rs.next()) {
+//            return null;
+//        }
+        Category returnCat = new Category(
+                rs.getLong("id"),
+                rs.getString("category"));
+//        System.out.println(returnCat.getId());
+        return returnCat;
+
+    }
+
+    private Category extractCategoryForSet(ResultSet rs) throws SQLException {
         if (!rs.next()) {
             return null;
         }
-        return new Category(
+        Category returnCat = new Category(
                 rs.getLong("id"),
-                rs.getString("category")
-        );
+                rs.getString("category"));
+        System.out.println(returnCat.getId());
+        return returnCat;
+
     }
 
     private void setCategoryId(Ad ad){
@@ -126,7 +140,7 @@ public class MySQLAdsDao implements Ads {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, category);
-            Category cat = extractCategory(stmt.executeQuery());
+            Category cat = extractCategoryForSet(stmt.executeQuery());
             ad.setCategory_id(cat.getId());
         } catch (SQLException e) {
             throw new RuntimeException("Error finding the id for the category", e);
