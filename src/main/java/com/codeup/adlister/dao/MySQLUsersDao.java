@@ -65,4 +65,40 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    @Override
+    public Boolean checkUniqueUser(String username){
+//        String query = "SELECT * FROM users WHERE username = ? LIMIT 1";
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.setString(1, username);
+//            User errorCheck = extractUser(stmt.executeQuery());
+//            return false;
+//        } catch (SQLException e) {
+//            return true;
+//        }
+        String query = "SELECT count(*) FROM users WHERE username = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, username);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()){
+                int count = rs.getInt(1);
+//                if (count >= 1){
+                    return false;
+//                }
+            }
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException("Error checking if username is unique", e);
+        }
+//        final String queryCheck = "SELECT count(*) from messages WHERE msgid = ?";
+//        final PreparedStatement ps = conn.prepareStatement(queryCheck);
+//        ps.setString(1, msgid);
+//        final ResultSet resultSet = ps.executeQuery();
+//        if(resultSet.next()) {
+//            final int count = resultSet.getInt(1);
+//        }
+    }
+
+
 }
