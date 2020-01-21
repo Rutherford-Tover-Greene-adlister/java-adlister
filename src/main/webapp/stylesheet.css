@@ -1,0 +1,125 @@
+
+
+    body {
+        background-color: #E5EAD8;
+    }
+
+    #fontNavAd {
+        font-size: 90px;
+    }
+
+    hr {
+        background-color: white;
+        margin-left: -20px;
+        margin-right: 35px;
+    }
+
+    img {
+        width: auto;
+        height: 400px;
+    }
+
+
+    #Main {
+
+        font-size: 60px;
+        color: burlywood;
+    }
+
+
+    .navbar {
+        height: 140px;
+        width: auto;
+        background-color: #82A1DB;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    #navBrain {
+        color: white;
+        font-family: Concert One, serif;
+        font-size: 110px;
+        margin-bottom: -50px;
+        margin-top: -25px;
+    }
+
+    #NavIcon {
+        width: auto;
+        height: 120px;
+        margin-left: -15px;
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+
+
+    #navLister {
+
+        color: #82A1DB;
+        display: inline-flex;
+        font-family: "Concert One", serif;
+        font-size: 110px;
+        margin-top: -20px;
+        margin-left: 320px;
+
+
+    }
+
+    #NavLogin {
+        margin-right: -30px;
+        /*margin-left: 40px;*/
+        margin-bottom: -50px;
+        /*margin-top: -20px;*/
+
+
+    }
+
+    #NavLoginContainer {
+        margin-bottom: -20px;
+    }
+
+    #NavLogout {
+        /*margin-bottom: 10px;*/
+        /*padding-bottom: -10px;*/
+    }
+
+    #NavLogoutContainer {
+        margin-bottom: 20px;
+        margin-top: -20px;
+    }
+
+    .NavFontLoginLogout {
+
+        /*border-radius: 50%;*/
+        color: white;
+        /*display: inline;*/
+        font-family: 'Khand', sans-serif;
+        font-size: 40px;
+        /*border: white solid 1px;*/
+        /*width:250px;*/
+        /*height: 250px;*/
+        margin-right: 50px;
+        /*margin-top: 90px;*/
+        /*margin-bottom: 29px;*/
+
+    }
+
+    #NavLoginLogoutContainer {
+        margin-bottom: -40px;
+    }
+
+
+    #WordLogin {
+        margin-right: -40px;
+        margin-left: 10px;
+    }
+
+@media screen and (min-width: 992px){
+
+
+    #navLister{
+        margin-left: 670px;
+    }
+
+
+}
