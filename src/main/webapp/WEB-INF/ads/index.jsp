@@ -11,7 +11,15 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
-
+    <div id="searchBar">
+        <h4>search</h4>
+        <label for="catSort">Category</label>
+        <select id="catSort" name="catSort" class="form-control">
+            <c:forEach var="cat" items="${catSelects}">
+                <option value="${cat.category}">${cat.category}</option>
+            </c:forEach>
+        </select>
+    </div>
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
             <h2>${ad.title}</h2>
