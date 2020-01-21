@@ -41,6 +41,20 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> SearchByCategory(String category){
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE category_id = ?");
+            long cat_id = getCategoryID(category);
+            stmt.setLong(1, cat_id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads.", e);
+        }
+    }
+
+    @Override
     public List<Category> allCategories(){
         PreparedStatement stmt = null;
         try {
@@ -107,6 +121,17 @@ public class MySQLAdsDao implements Ads {
              return cat.getCategory();
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a category by its ID", e);
+        }
+    }
+    private Long getCategoryID(String categoryName){
+        String query = "SELECT * FROM categories WHERE category = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, categoryName);
+             Category cat = extractCategoryForSet(stmt.executeQuery());
+             return cat.getId();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a ID by its category", e);
         }
     }
 
