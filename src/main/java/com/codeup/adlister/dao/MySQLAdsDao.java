@@ -1,6 +1,8 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.Category;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -17,9 +19,9 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -39,13 +41,41 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> SearchByCategory(String category){
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE category_id = ?");
+            long cat_id = getCategoryID(category);
+            stmt.setLong(1, cat_id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads.", e);
+        }
+    }
+
+    @Override
+    public List<Category> allCategories(){
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM categories");
+            ResultSet rs = stmt.executeQuery();
+            return createCategoriesFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO ads(user_id,category_id, title, description) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
-            stmt.setString(2, ad.getTitle());
-            stmt.setString(3, ad.getDescription());
+            setCategoryId(ad);
+            stmt.setLong(2, ad.getCategory_id());
+            stmt.setString(3, ad.getTitle());
+            stmt.setString(4, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -57,10 +87,12 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("title"),
-            rs.getString("description")
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getLong("category_id"),
+                getCategoryName(rs.getLong("category_id")),
+                rs.getString("title"),
+                rs.getString("description")
         );
     }
 
@@ -71,4 +103,80 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+    private List<Category> createCategoriesFromResults(ResultSet rs) throws SQLException {
+        List<Category> cats = new ArrayList<>();
+        while (rs.next()) {
+            cats.add(extractCategory(rs));
+        }
+        return cats;
+    }
+
+    private String getCategoryName(long category_id){
+        String query = "SELECT * FROM categories WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, category_id);
+             Category cat = extractCategoryForSet(stmt.executeQuery());
+             return cat.getCategory();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a category by its ID", e);
+        }
+    }
+    private Long getCategoryID(String categoryName){
+        String query = "SELECT * FROM categories WHERE category = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, categoryName);
+             Category cat = extractCategoryForSet(stmt.executeQuery());
+             return cat.getId();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a ID by its category", e);
+        }
+    }
+
+    private Category extractCategory(ResultSet rs) throws SQLException {
+//        if (!rs.next()) {
+//            return null;
+//        }
+        Category returnCat = new Category(
+                rs.getLong("id"),
+                rs.getString("category"));
+//        System.out.println(returnCat.getId());
+        return returnCat;
+
+    }
+
+    private Category extractCategoryForSet(ResultSet rs) throws SQLException {
+        if (!rs.next()) {
+            return null;
+        }
+        Category returnCat = new Category(
+                rs.getLong("id"),
+                rs.getString("category"));
+//        System.out.println(returnCat.getId());
+        return returnCat;
+
+    }
+
+    private void setCategoryId(Ad ad){
+        String category = ad.getCategoryName();
+        String query = "SELECT * FROM categories WHERE category = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, category);
+            Category cat = extractCategoryForSet(stmt.executeQuery());
+            ad.setCategory_id(cat.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding the id for the category", e);
+        }
+    }
+
+    public static void main(String[] args) {
+//        System.out.println(DaoFactory.getAdsDao().allCategories());
+        Ad newAd = new Ad(1,"Art","calc Lessons","class for calc");
+        DaoFactory.getAdsDao().insert(newAd);
+    }
+
+
 }
