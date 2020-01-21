@@ -18,6 +18,11 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> SearchByCategory(String category) {
+        return null;
+    }
+
+    @Override
     public List<Category> allCategories() {
         if (categories == null){
 
