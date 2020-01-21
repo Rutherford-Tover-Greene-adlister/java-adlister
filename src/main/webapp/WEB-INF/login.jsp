@@ -4,6 +4,10 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Please Log In" />
     </jsp:include>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Khand&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -21,5 +25,15 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
