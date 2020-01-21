@@ -16,9 +16,9 @@
         </div>
         <div class="form-group">
             <label for="categories">Category</label>
-            <select id="categories" class="form-control">
+            <select id="categories" name="categories" class="form-control">
                 <c:forEach var="cat" items="${cats}">
-                    <option>${cat.category}</option>
+                    <option value="${cat.category}">${cat.category}</option>
                 </c:forEach>
             </select>
         </div>

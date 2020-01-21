@@ -103,7 +103,7 @@ public class MySQLAdsDao implements Ads {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setLong(1, category_id);
-             Category cat = extractCategory(stmt.executeQuery());
+             Category cat = extractCategoryForSet(stmt.executeQuery());
              return cat.getCategory();
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a category by its ID", e);
@@ -129,7 +129,7 @@ public class MySQLAdsDao implements Ads {
         Category returnCat = new Category(
                 rs.getLong("id"),
                 rs.getString("category"));
-        System.out.println(returnCat.getId());
+//        System.out.println(returnCat.getId());
         return returnCat;
 
     }
@@ -148,7 +148,9 @@ public class MySQLAdsDao implements Ads {
     }
 
     public static void main(String[] args) {
-        System.out.println(DaoFactory.getAdsDao().allCategories());
+//        System.out.println(DaoFactory.getAdsDao().allCategories());
+        Ad newAd = new Ad(1,"Art","calc Lessons","class for calc");
+        DaoFactory.getAdsDao().insert(newAd);
     }
 
 
