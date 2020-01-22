@@ -31,6 +31,7 @@ public class RegisterServlet extends HttpServlet {
 
         if (inputHasErrors) {
 //            alert goes here
+            request.setAttribute("messageError","input error");
             response.sendRedirect("/register");
             return;
         }
