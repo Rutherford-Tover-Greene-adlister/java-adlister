@@ -19,12 +19,30 @@ public class MySQLAdsDao implements Ads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
+
+//                config.getUrl(),
+//                config.getUsername(),
+//                config.getPassword()
+
                     config.getUrl(),
                     config.getUser(),
                     config.getPassword()
+
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
+        }
+    }
+    @Override
+    public Ad findByID(String id) {
+        int queryId = Integer.parseInt(id);
+        String query = "SELECT * FROM ads WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1, queryId);
+            return extractAd(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding an ad by id", e);
         }
     }
 
@@ -83,6 +101,51 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    }
+
+    @Override
+    public void deleteEntry(long id) {
+        String query = "DELETE FROM ads where id = ?";
+
+        try {
+            PreparedStatement stm = connection.prepareStatement(query);
+            stm.setLong(1, id);
+            stm.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting your ad.", e);
+        }
+
+    }
+
+    public void editAd (long id, String title, String description) {
+        String query = "UPDATE ads SET title = ?, description = ? where id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, title);
+            stmt.setString(2, description);
+            stmt.setLong(3, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("There has been an error updating your ad.");
+        }
+
+    }
+
+    @Override
+    public Ad singleAd(long id) {
+        String query = "Select * FROM ads where id = ?";
+
+        try {
+            PreparedStatement stm = connection.prepareStatement(query);
+            stm.setLong(1, id);
+            ResultSet result = stm.executeQuery();
+            return createAdsFromResults(result).get(0);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error getting ad.", e);
+        }
+
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
