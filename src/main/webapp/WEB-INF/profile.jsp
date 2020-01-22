@@ -15,5 +15,6 @@
     <a href="/ads/create">create ad</a>
 </div>
 
+
 </body>
 </html>
