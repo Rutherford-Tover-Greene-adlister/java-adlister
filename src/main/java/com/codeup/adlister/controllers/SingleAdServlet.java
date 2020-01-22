@@ -15,6 +15,7 @@ public class SingleAdServlet extends HttpServlet {
         Long adId = Long.parseLong(request.getParameter("adId"));
 
         request.setAttribute("ad", DaoFactory.getAdsDao().singleAd(adId));
+        request.setAttribute("catData", DaoFactory.getAdsDao().allCategories());
         request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp").forward(request, response);
     }
 }

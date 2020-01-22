@@ -8,23 +8,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
+
         <jsp:param name="title" value="View a single Ad" />
 
     </jsp:include>
-
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>Single Ad</title>
 </head>
 <body>
-
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <%--<p> TestAofoasijfoasjdfoasif </p>--%>
     <div class="container">
             <div class="col-md-6">
                 <form action="/ads/editAd" method="post">
                     <input type="hidden"  name="adId" value="${ad.id}" >
                     <input id="title" name="title" type="text" disabled value="${ad.title}">
+                    
+<%--                    <input id="category" name="category" type="text" disabled value="${ad.categoryName}">--%>
+                    <div>
+                        <label for="category">Category</label>
+                        <select id="category" name="category" disabled>
+                            <c:forEach var="cat" items="${catData}">
+                                <c:if test="${ad.categoryName == cat.category}">
+                                    <option value="${cat.category}" selected>${cat.category}</option>
+                                </c:if>
+                                <c:if test="${ad.categoryName != cat.category}">
+                                    <option value="${cat.category}">${cat.category}</option>
+                                </c:if>
+                            </c:forEach>
+                        </select>
+                    </div>
                     <input id="description"  name="description" type="text" disabled value="${ad.description}">
                     <input type="submit" id="submitButton" value="Save" style="display: none;">
                 </form>
@@ -60,6 +77,10 @@
                 if ($('#description').attr('disabled'))
                     $('#description').removeAttr('disabled');
                 else $('#description').attr('disabled', 'disabled');
+
+                if ($('#category').attr('disabled'))
+                    $('#category').removeAttr('disabled');
+                else $('#category').attr('disabled', 'disabled');
 
             });
         });
