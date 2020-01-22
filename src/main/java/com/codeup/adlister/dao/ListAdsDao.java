@@ -70,6 +70,11 @@ public class ListAdsDao implements Ads {
     private List<Ad> ads;
     private List<Category> categories;
 
+    @Override
+    public Ad findByID(String id) {
+        return null;
+    }
+
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
@@ -100,6 +105,21 @@ public class ListAdsDao implements Ads {
         ad.setId((long) ads.size());
         ads.add(ad);
         return ad.getId();
+    }
+
+    @Override
+    public Ad singleAd(long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteEntry(long id) {
+
+    }
+
+    @Override
+    public void editAd(long id, String title, String description) {
+
     }
 
     private List<Ad> generateAds() {

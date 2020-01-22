@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<p> TestAofoasijfoasjdfoasif </p>
+<%--<p> TestAofoasijfoasjdfoasif </p>--%>
     <div class="container">
             <div class="col-md-6">
                 <form action="/ads/editAd" method="post">
