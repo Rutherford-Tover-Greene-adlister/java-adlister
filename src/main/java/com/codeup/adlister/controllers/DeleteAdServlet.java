@@ -1,8 +1,5 @@
 package com.codeup.adlister.controllers;
-
 import com.codeup.adlister.dao.DaoFactory;
-import com.codeup.adlister.dao.MySQLAdsDao;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/ads/deleteAd")
+@WebServlet(urlPatterns = "/deleteAd")
     public class DeleteAdServlet extends HttpServlet {
 
     //Get for the intital page load. Returns a single ad
@@ -23,22 +20,34 @@ import java.io.IOException;
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
 
         //Send data back to page
-        request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp")
+        request.getRequestDispatcher("/WEB-INF/ads/profile.jsp")
                 .forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)  throws IOException {
-        //get the id
-//        String x = req.getParameter("adid");
-        Long req1 = Long.parseLong(req.getParameter("adId"));
 
-        //call the delete method from adsDao and pass it the id
-        DaoFactory.getAdsDao().deleteEntry(req1);
 
-        //after deleting take user back to the ads page
-        resp.sendRedirect("/ads");
+        @Override
+        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+            String hiddenParam = req.getParameter("adDelete");
+
+            long id = Long.parseLong(hiddenParam);
+            DaoFactory.getAdsDao().deleteEntry(id);
+            resp.sendRedirect("/profile");
 
         }
     }
 
+
+
+
+
+
+//        //get the id
+////        String x = req.getParameter("adid");
+//        Long req1 = Long.parseLong(req.getParameter("adDelete"));
+//
+//        //call the delete method from adsDao and pass it the id
+//        DaoFactory.getAdsDao().deleteEntry(req1);
+//
+//        //after deleting take user back to the ads page
+//        resp.sendRedirect("/profile");

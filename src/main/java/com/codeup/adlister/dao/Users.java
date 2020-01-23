@@ -8,4 +8,5 @@ public interface Users {
     User findByUsername(String username);
     Long insert(User user);
     Boolean checkUniqueUser(String username);
+    User findByUserId (long id);
 }
