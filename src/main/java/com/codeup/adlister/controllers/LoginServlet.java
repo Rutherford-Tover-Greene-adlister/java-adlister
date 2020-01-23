@@ -13,7 +13,16 @@ import java.io.IOException;
 
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
+    private String failLogin = null;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String lastURL = request.getHeader("referer");
+//        request.setAttribute("lastPage", lastURL);
+        if (!lastURL.equalsIgnoreCase("http://localhost:8080/login")){
+            failLogin = null;
+        }
+        request.setAttribute("failLogin", failLogin);
+
         if (request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/profile");
             return;
@@ -22,6 +31,7 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        failLogin = null;
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         User user = DaoFactory.getUsersDao().findByUsername(username);
@@ -40,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 //            response.sendRedirect(referer);
             response.sendRedirect("/profile");
         } else {
-
+            failLogin = username;
             response.sendRedirect("/login");
         }
     }

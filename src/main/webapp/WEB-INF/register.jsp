@@ -18,61 +18,45 @@
 <%--    <form action="/register" method="post">--%>
     <form action="/register" class="needs-validation" method="post" novalidate>
         <div class="form-group">
-            <c:if test="${reloadUser == null}">
                 <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text" required>
-                <div class="invalid-feedback">Username is Required</div>
-            </c:if>
-            <c:if test="${reloadUser != null}">
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text" value="${username}" required>
+                <input id="username" name="username" class="form-control" type="text"
+                <c:if test="${reloadUser != null}"> value="${username}" </c:if>
+                       required>
                 <div class="invalid-feedback">Username is Required</div>
                 <c:if test="${userFail}">
                 <small id="usedUsernameError" class="form-text text-danger">ERROR: That username is not available. Please enter a new username.</small>
                 </c:if>
-            </c:if>
+
 
         </div>
         <div class="form-group">
-            <c:if test="${reloadUser == null}">
                 <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="text" required>
+                <input id="email" name="email" class="form-control" type="text"
+                <c:if test="${reloadUser != null}"> value="${email}" </c:if>
+                       required>
                 <div class="invalid-feedback">Email is Required</div>
-            </c:if>
-            <c:if test="${reloadUser != null}">
-                <label for="email">Email</label>
-                <input id="email" name="email" class="form-control" type="text" value="${email}" required>
-                <div class="invalid-feedback">Email is Required</div>
-            </c:if>
+
 
         </div>
         <div class="form-group">
-            <c:if test="${reloadUser == null}">
                 <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password" required>
+                <input id="password" name="password" class="form-control" type="password"
+                <c:if test="${reloadUser != null}"> value="${password}" </c:if>
+                       required>
                 <div class="invalid-feedback">Password is Required</div>
-            </c:if>
-            <c:if test="${reloadUser != null}">
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password" value="${password}" required>
-                <div class="invalid-feedback">Password is Required</div>
-            </c:if>
+
 
         </div>
         <div class="form-group">
-            <c:if test="${reloadUser == null}">
                 <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password" required>
-                <div class="invalid-feedback">Must confirm password</div>
-            </c:if>
-            <c:if test="${reloadUser != null}">
-                <label for="confirm_password">Confirm Password</label>
-                <input id="confirm_password" name="confirm_password" class="form-control" type="password" value="${confirm_password}" required>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password"
+                <c:if test="${reloadUser != null}"> value="${confirm_password}" </c:if>
+                       required>
                 <div class="invalid-feedback">Must confirm password</div>
                 <c:if test="${passwordFail}">
                     <small id="usedUsernameError" class="form-text text-danger">ERROR: passwords do not match.</small>
                 </c:if>
-            </c:if>
+
 
         </div>
         <input type="submit" class="btn btn-primary btn-block">
