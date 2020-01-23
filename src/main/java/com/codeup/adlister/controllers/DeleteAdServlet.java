@@ -38,16 +38,3 @@ import java.io.IOException;
     }
 
 
-
-
-
-
-//        //get the id
-////        String x = req.getParameter("adid");
-//        Long req1 = Long.parseLong(req.getParameter("adDelete"));
-//
-//        //call the delete method from adsDao and pass it the id
-//        DaoFactory.getAdsDao().deleteEntry(req1);
-//
-//        //after deleting take user back to the ads page
-//        resp.sendRedirect("/profile");

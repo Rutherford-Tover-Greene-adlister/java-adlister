@@ -13,7 +13,10 @@
 
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <a href="/ads/create">create ad</a>
+    <p>User Information: </p>
+    <p>Email: ${user.email}</p>
+    <a href="/ads/create"><button>Create Ad</button></a>
+
 </div>
 
 
