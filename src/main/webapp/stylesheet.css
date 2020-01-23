@@ -39,7 +39,7 @@
         display:none;
     }
     .btn{
-        font-size: 70px;
+        font-size: 40px;
     }
 
     .card{
@@ -145,7 +145,50 @@
 
     /*}*/
 
+    #Loginbutton{
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 20px;
+        font-family:'Khand', sans-serif; ;
+    }
 
+
+    #LoginBrain img{
+        height: 1200px;
+        margin-top: 50px;
+        /*margin-bottom: -500px;*/
+        opacity: 0.5;
+        position: static;
+
+    }
+
+    #LoginBrain{
+        margin-left: -500px;
+        margin-top: 50px;
+        margin-bottom: 200px ;
+    }
+
+    #LoginContainer{
+        background-color: #82A1DB;
+        height: 400px;
+        padding: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+
+    }
+
+    #LoginPlease{
+
+        color:white;
+        font-family: 'Khand', sans-serif;
+
+    }
+
+    .LoginUserPassword{
+        color:white;
+        font-family: 'Khand', sans-serif;;
+    }
     #Main {
 
         font-size: 60px;
