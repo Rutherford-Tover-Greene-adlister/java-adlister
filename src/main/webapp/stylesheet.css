@@ -156,6 +156,52 @@
 
     }
 
+    #EditCancelButton{
+        margin-left: 35px;
+    }
+
+    .EditButtonCancel{
+        width: 300px;
+        font-size: 50px;
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 35px;
+        margin-top: 30px;
+        font-family:'Khand', sans-serif;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+    #EditAdContainer{
+        font-family: Khand, serif;
+        background-color: #82A1DB;
+        width:800px;
+        height: 690px;
+        padding: 80px;
+        margin-left: 100px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    #EditCat{
+        font-size: 40px;
+    }
+
+    #EditDescrp{
+        font-size: 40px;
+    }
+
+    #EditTitle{
+        font-size: 40px;
+    }
+
+
+
+     #EditFont{
+         font-family: Khand, serif;
+         font-size: 70px;
+     }
     .form-control{
         font-size:40px;
     }
@@ -229,8 +275,8 @@
 
     #LoginContainer{
         background-color: #82A1DB;
-        height: 400px;
-        padding: 50px;
+        height: 500px;
+        padding: 80px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
         -moz-box-shadow: -1px 10px 10px -3px #777;
         box-shadow: -1px 10px 10px -3px #777;
@@ -350,6 +396,7 @@
         height: auto;
         width: 700px;
         margin-top: 850px;
+        margin-bottom: -200px;
         /*margin-left: 20px;*/
         /*margin-bottom: -100px;*/
         margin-right: 50px;
@@ -391,7 +438,7 @@
     .ProfileCardFont{
         color:black;
     }
-    #ProfileCreateAdButton{
+    .ProfileCreateAdButton{
         font-family: 'Ubuntu', sans-serif;
         font-size: 30px;
         height: 50px;

@@ -24,12 +24,11 @@
 
 <%--    <p class="ProfileCard">User Information: </p>--%>
     <p class="ProfileCard"><img src="images/email.png" id="ProfileEmailLogo"><div id="ProfileEmail">${user.email} </p> </div>
-    <a href="/ads/create"><button id="ProfileCreateAdButton">Create Ad</button></a>
-
+    <a href="/ads/create"><button class="ProfileCreateAdButton">Create Ad</button></a>
+    <a href="/ads/create"><button class="ProfileCreateAdButton">Edit Profile</button></a>
         </div>
     </div>
 
-<div id="ProfileBrain"><img src="images/brain.png"></div>
 <div class="card" id="ProfileAdsCard">
     <div class="card-body" class="ProfileCardFont">
     <c:forEach var="ad" items="${ads}">

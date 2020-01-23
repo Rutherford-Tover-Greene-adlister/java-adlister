@@ -13,15 +13,15 @@
 
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<form method="post" action="editAd">
+<form method="post" action="editAd" id="EditAdContainer">
     <div class="form-group">
 
-        <label for="title">Title</label>
+        <label for="title" class="EditFont" id="EditTitle">Title</label>
         <input id="title" value="${ad.title}" name="title" class="form-control" type="text">
     </div>
 
     <div class="form-group">
-        <label for="categories">Category</label>
+        <label for="categories"class="EditFont" id="EditCat">Category</label>
         <select id="categories" name="categories" class="form-control">
             <c:forEach var="cat" items="${cats}">
                 <option value="${cat.id}">${cat.category}</option>
@@ -30,17 +30,18 @@
     </div>
 
     <div class="form-group">
-        <label for="description">Description</label>
+        <label for="description"class="EditFont" id="EditDescrp" >Description</label>
         <input id="description" value="${ad.description}" name="description" class="form-control" type="text">
     </div>
 
-    <button name="id" value="${ad.id}">Update</button>
+    <button name="id" value="${ad.id}" class="EditButtonCancel">Update</button>
+    <button class="EditButtonCancel" id="EditCancelButton">Cancel</button>
 </form>
 <form method="get" action="profile">
-    <button>Cancel</button>
+
 
 </form>
-
+<div id="CreateBrain"><img src="../images/brain.png"></div>
 
 </body>
 </html>
