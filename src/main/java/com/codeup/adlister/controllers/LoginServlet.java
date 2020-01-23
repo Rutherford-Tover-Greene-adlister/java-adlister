@@ -14,9 +14,10 @@ import java.io.IOException;
 @WebServlet(name = "controllers.LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     private String failLogin = null;
-
+    private String returnPage;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String lastURL = request.getHeader("referer");
+        returnPage = lastURL;
 //        request.setAttribute("lastPage", lastURL);
         if (!lastURL.equalsIgnoreCase("http://localhost:8080/login")){
             failLogin = null;
@@ -46,9 +47,11 @@ public class LoginServlet extends HttpServlet {
         boolean validAttempt = Password.check(password, user.getPassword());
 
         if (validAttempt) {
+
             request.getSession().setAttribute("user", user);
 //            response.sendRedirect(referer);
-            response.sendRedirect("/profile");
+//            response.sendRedirect("/profile");
+            response.sendRedirect(returnPage);
         } else {
             failLogin = username;
             response.sendRedirect("/login");
