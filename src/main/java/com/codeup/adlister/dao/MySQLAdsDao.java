@@ -40,7 +40,9 @@ public class MySQLAdsDao implements Ads {
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setInt(1, queryId);
-            return extractAd(stmt.executeQuery());
+            ResultSet result = stmt.executeQuery();
+            return createAdsFromResults(result).get(0);
+            //return extractAd(stmt.executeQuery());
         } catch (SQLException e) {
             throw new RuntimeException("Error finding an ad by id", e);
         }
@@ -117,13 +119,15 @@ public class MySQLAdsDao implements Ads {
 
     }
 
-    public void editAd (long id, String title, String description) {
-        String query = "UPDATE ads SET title = ?, description = ? where id = ?";
+    public void editAd (long id, String title, long category, String description) {
+        String query = "UPDATE ads SET title = ?, category_id = ?, description = ? where id = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, title);
-            stmt.setString(2, description);
-            stmt.setLong(3, id);
+            stmt.setLong(2, category);
+            stmt.setString(3, description);
+            stmt.setLong(4, id);
+
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("There has been an error updating your ad.");
@@ -234,6 +238,32 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error finding the id for the category", e);
         }
     }
+    public List<Ad> findByUsername(int user_id) {
+        List <Ad> ads = new ArrayList<>();
+        String query = "SELECT * FROM Ads WHERE user_id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1, user_id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+//            while(rs.next()){
+//                ads.add(
+//                        new Ad(
+//                                rs.getLong("id"),
+//                                rs.getLong("user_id"),
+//                                rs.getString("title"),
+//                                rs.getString("description")
+//                        )
+//                );
+//            }
+//            return ads;
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by username", e);
+        }
+
+    }
+
 
     public static void main(String[] args) {
 //        System.out.println(DaoFactory.getAdsDao().allCategories());

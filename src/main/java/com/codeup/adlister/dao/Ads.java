@@ -25,7 +25,11 @@ public interface Ads {
     void deleteEntry(long id);
 
     //edit an Ad
-    void editAd (long id, String title, String description);
+    void editAd (long id, String title,long category, String description);
+
+    //find by username
+    List<Ad> findByUsername(int user_id);
+
 
 
 
