@@ -44,8 +44,6 @@
                 <c:if test="${reloadUser != null}"> value="${password}" </c:if>
                        required>
                 <div class="invalid-feedback">Password is Required</div>
-
-
         </div>
         <div class="form-group">
                 <label for="confirm_password">Confirm Password</label>

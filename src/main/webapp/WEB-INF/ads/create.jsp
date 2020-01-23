@@ -13,18 +13,23 @@
 
     <div class="container">
         <h1>Create a new Ad</h1>
-        <form action="/ads/create" method="post">
+        <form action="/ads/create" class="needs-validation" method="post" novalidate>
             <div class="form-group">
                 <label for="title">Title</label>
-                <input id="title" name="title" class="form-control" type="text">
+                <input id="title" name="title" class="form-control" <c:if test="${title != null}">value="${title}"</c:if> type="text" required>
+                <div class="invalid-feedback">Title is Required</div>
             </div>
           <div class="form-group">
             <label for="categories">Category</label>
-            <select id="categories" name="categories" class="form-control">
+            <select id="categories" name="categories" class="form-control" required>
                 <c:forEach var="cat" items="${cats}">
-                    <option value="${cat.category}">${cat.category}</option>
+                    <option value="${cat.category}"
+                            <c:if test="${(categories != null) && (cat.category == categories)}">
+                                selected
+                            </c:if>>${cat.category}</option>
                 </c:forEach>
             </select>
+              <div class="invalid-feedback">Category is Required</div>
         </div>
 <%--        <c:forEach var="cat" items="${cats}">--%>
 <%--            <div class="form-check form-check-inline">--%>
@@ -34,14 +39,35 @@
 <%--        </c:forEach>--%>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" type="text"></textarea>
+                <textarea id="description" name="description" class="form-control" <c:if test="${description != null}">
+                    value="${description}"</c:if> type="text" required></textarea>
+                <div class="invalid-feedback">Description is Required</div>
             </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
 
 
-
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 
 
 
