@@ -1,8 +1,121 @@
+    .accordion{
+        margin-top: 50px;
+        height:100px;
+        font-size: 40px;
 
+    }
+
+    /*.arrowText{*/
+    /*    margin-right: 30px;*/
+
+    /*}*/
+    .arrow{
+        color:white;
+        font-family: 'Khand', sans-serif;
+
+    }
+
+    .arrow img{
+        width:100px;
+        height: 100px;
+
+    }
 
     body {
         background-color: #E5EAD8;
     }
+
+
+    #bottomB{
+        color:white;
+        background-color: #82A1DB;
+        width: auto;
+        height: 25px;
+        margin-bottom: 20px;
+
+    }
+
+    .bd{
+        display:none;
+    }
+    .btn{
+        font-size: 40px;
+    }
+
+    .card{
+        background-color: #82A1DB;
+    }
+
+    .card-body{
+        color:white;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #circle{
+        background-color: #82A1DB;
+        border-radius: 50%;
+        height:700px;
+        width: 700px;
+        margin-top: 50px;
+        margin-left: 70px;
+    }
+
+    #circleBrain img{
+        height: 1200px;
+        margin-top: 250px;
+        opacity: 0.5;
+        position: static;
+        /*margin-bottom: 500px;*/
+
+
+    }
+    #circleBrain{
+        margin-left: -500px;
+        margin-top: 450px;
+
+    }
+
+    .container{
+        height:700px;
+        /*width:1500px;*/
+    }
+
+    .carouselBox{
+        background-color: #82A1DB;
+        border-radius: 5%;
+        margin-top: -100px;
+        border: 5px solid white;
+        padding: 50px 50px 100px;
+        height: auto;
+        width: auto;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    .carousel-caption {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 700px;
+        /*height: 300px;*/
+        margin-left: 140px;
+        font-size: 50px;
+        margin-top: 200px;
+
+    }
+
+    #facelogo img{
+        height:170px;
+        width: 170px;
+        margin-bottom: 700px;
+        margin-left: 700px;
+        margin-top: -400px;
+        padding: 0;
+        border-radius: 30%;
+        border: solid white 3px;
+    }
+
 
     #fontNavAd {
         font-size: 90px;
@@ -10,20 +123,84 @@
 
     hr {
         background-color: white;
-        margin-left: -20px;
-        margin-right: 35px;
+        margin-left: -30px;
+        margin-right: -20px;
     }
 
-    img {
-        width: auto;
+
+    #iglogo img{
+        height:170px;
+        width: 170px;
+        margin-bottom: 700px;
+        margin-left: 700px;
+        margin-top: -1100px;
+        border-radius: 50%;
+        border: solid white 6px;
+    }
+
+
+    /*img {*/
+    /*    width: auto;*/
+    /*    height: 700px;*/
+
+    /*}*/
+
+    #Loginbutton{
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 20px;
+        font-family:'Khand', sans-serif; ;
+    }
+
+
+    #LoginBrain img{
+        height: 1200px;
+        margin-top: 50px;
+        /*margin-bottom: -500px;*/
+        opacity: 0.5;
+        position: static;
+
+    }
+
+    #LoginBrain{
+        margin-left: -500px;
+        margin-top: 50px;
+        margin-bottom: 200px ;
+    }
+
+    #LoginContainer{
+        background-color: #82A1DB;
         height: 400px;
+        padding: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+
     }
 
+    #LoginPlease{
 
+        color:white;
+        font-family: 'Khand', sans-serif;
+
+    }
+
+    .LoginUserPassword{
+        color:white;
+        font-family: 'Khand', sans-serif;;
+    }
     #Main {
 
         font-size: 60px;
         color: burlywood;
+    }
+
+    #Mainpic img{
+        height:600px;
+        width:900px;
+        margin-top: 50px;
+        margin-left: 40px;
+
     }
 
 
@@ -60,13 +237,14 @@
         font-family: "Concert One", serif;
         font-size: 110px;
         margin-top: -20px;
-        margin-left: 320px;
+        margin-left: 340px;
 
 
     }
 
     #NavLogin {
         margin-right: -30px;
+        margin-left: 40px;
         /*margin-left: 40px;*/
         margin-bottom: -50px;
         /*margin-top: -20px;*/
@@ -98,7 +276,7 @@
         /*border: white solid 1px;*/
         /*width:250px;*/
         /*height: 250px;*/
-        margin-right: 50px;
+        margin-right: 40px;
         /*margin-top: 90px;*/
         /*margin-bottom: 29px;*/
 
@@ -112,6 +290,16 @@
     #WordLogin {
         margin-right: -40px;
         margin-left: 10px;
+    }{
+
+    }
+
+    #twitlogo img{
+        height:170px;
+        width: 170px;
+        margin-left: 700px;
+        margin-top: -750px;
+
     }
 
 @media screen and (min-width: 992px){
