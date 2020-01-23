@@ -2,6 +2,7 @@
         margin-top: 50px;
         height:100px;
         font-size: 40px;
+        /*background-color: #82A1DB;*/
 
     }
 
@@ -44,8 +45,6 @@
 
     /*.card{*/
     /*    background-color: #82A1DB;*/
-    /*    width:750px;*/
-    /*    height: 700px;*/
     /*    margin-top: 100px;*/
     /*    -webkit-box-shadow: -1px 10px 10px -3px #777;*/
     /*    -moz-box-shadow: -1px 10px 10px -3px #777;*/
@@ -81,6 +80,52 @@
 
     }
 
+    #CreateBrain img{
+       margin-top: -250px;
+       margin-left: -490px;
+       height: 1200px
+
+
+    }
+    #CreateBrain{
+        height: 1200px;
+        margin-top: 350px;
+        opacity: 0.5;
+        position: static;
+        /*margin-bottom: 500px;*/
+    }
+
+    #CreateButton{
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 20px;
+        font-family:'Khand', sans-serif; ;
+    }
+
+    #CreateCard{
+        background-color: #82A1DB;
+        font-family: 'Khand', sans-serif;
+        color:white;
+        width: 2050px;
+        height: 750px;
+        padding: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    .CreateInput{
+        font-size: 30px;
+    }
+
+    #CreateNewAd{
+        font-size: 50px;
+    }
+
+    .CreateTitleCategory{
+        font-size: 30px;
+    }
+
     .container{
         height:700px;
         /*width:1500px;*/
@@ -109,6 +154,10 @@
         font-size: 50px;
         margin-top: 200px;
 
+    }
+
+    .form-control{
+        font-size:40px;
     }
 
     #facelogo img{
@@ -144,6 +193,10 @@
         border: solid white 6px;
     }
 
+
+    #HomeCard{
+        background-color: #82A1DB;
+    }
 
     /*img {*/
     /*    width: auto;*/

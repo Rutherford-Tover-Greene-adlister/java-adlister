@@ -14,15 +14,15 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-    <div class="container">
-        <h1>Create a new Ad</h1>
+    <div class="container" id="CreateCard">
+        <h1 id="CreateNewAd">Create a new Ad</h1>
         <form action="/ads/create" method="post">
             <div class="form-group">
-                <label for="title">Title</label>
+                <label for="title" class="CreateTitleCategory">Title</label>
                 <input id="title" name="title" class="form-control" type="text">
             </div>
           <div class="form-group">
-            <label for="categories">Category</label>
+            <label for="categories" class="CreateTitleCategory">Category</label>
             <select id="categories" name="categories" class="form-control">
                 <c:forEach var="cat" items="${cats}">
                     <option value="${cat.category}">${cat.category}</option>
@@ -36,15 +36,15 @@
 <%--            </div>--%>
 <%--        </c:forEach>--%>
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control" type="text"></textarea>
+                <label for="description"class="CreateTitleCategory">Description</label>
+                <textarea id="description" name="description" class="form-control" type="text" ></textarea>
             </div>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn btn-block " id="CreateButton">
         </form>
     </div>
 
 
-
+<div id="CreateBrain"><img src="../images/brain.png"></div>
 
 
 
