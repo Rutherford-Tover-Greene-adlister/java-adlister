@@ -36,6 +36,10 @@
 
     <button name="id" value="${ad.id}">Update</button>
 </form>
+<form method="get" action="profile">
+    <button>Cancel</button>
+
+</form>
 
 
 </body>
