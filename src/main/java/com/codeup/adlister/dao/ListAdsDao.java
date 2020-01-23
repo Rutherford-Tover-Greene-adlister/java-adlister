@@ -118,8 +118,13 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
-    public void editAd(long id, String title, String description) {
+    public void editAd(long id, String title, long category, String description) {
 
+    }
+
+    @Override
+    public List<Ad> findByUsername(int user_id) {
+        return null;
     }
 
     private List<Ad> generateAds() {
