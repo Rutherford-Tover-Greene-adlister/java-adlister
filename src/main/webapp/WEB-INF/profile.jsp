@@ -29,6 +29,14 @@
     </div>
 
 
+<div class="container">
+    <h1>Welcome, ${sessionScope.user.username}!</h1>
+    <p>User Information: </p>
+    <p>Email: ${user.email}</p>
+<%--    <a href="/ads/create"><button>Create Ad</button></a>--%>
+    <a href="/create"><button>Create Ad</button></a>
+
+
 
 <div><img src="images/brain.png" id="ProfileBrain"> </div>
 

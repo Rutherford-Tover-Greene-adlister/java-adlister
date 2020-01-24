@@ -120,6 +120,24 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public void editProfile(long id, String username, String email) {
+//        String query = "SELECT * FROM users UPDATE username=?, email = ?, id = ?";
+        String query = "UPDATE users SET username=?, email=? where id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, username);
+            stmt.setString(2, email);
+            stmt.setLong(3, id);
+            stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error editing the user profile", e);
+        }
+
+
+    }
+
     public static void main(String[] args) {
 //        User user = new User("admin","randomemail","password");
         String username = "admin";

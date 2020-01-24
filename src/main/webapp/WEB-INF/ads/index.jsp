@@ -36,13 +36,13 @@
 
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
+
                 <h2>Title: ${ad.title}</h2>
                 <h3>Category:${ad.categoryName}</h3>
                 <p>Description:${ad.description}</p>
-                    <%-- View Ad Button --%>
-
-
-                <form action="/ads/singleAd" method="get">
+                    <%-- View single Ad Button --%>
+<%--            <form action="/ads/singleAd" method="get">--%>
+                <form action="/singleAd" method="get">
                     <input type="hidden" name="adId" value="${ad.id}" >
                     <input type="submit" value="View" id="AdViewButton">
                 </form>
