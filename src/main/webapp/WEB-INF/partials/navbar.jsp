@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" id="fontNavAd" href="/ads"><img id="NavIcon" src="images/idea (1).png"></a>
+            <a class="navbar-brand" id="fontNavAd" href="/ads"><img id="NavIcon" src="../images/idea (1).png"></a>
         </div>
         <div id="navBrain"> LESSON</div>
         <ul class="nav navbar-nav navbar-right">

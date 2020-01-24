@@ -2,13 +2,113 @@
         margin-top: 50px;
         height:100px;
         font-size: 40px;
+        /*background-color: #82A1DB;*/
 
     }
 
+    #AdsBrain{
+        position:relative;
+        height: 1200px;
+        margin-top: -500px;
+        /*margin-bottom: -500px;*/
+        opacity: 0.5;
+        margin-left: -620px;
+    }
+
+    #AdsBrain img{
+        height:1200px;
+        position: relative;
+    }
+
+    #AdsCardBody{
+        /*background-color: darkred;*/
+    }
+
+    #AdsCard{
+        background-color: #82A1DB;
+        width: 600px;
+        height: 340px;
+        color:white;
+        margin-top: 70px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+
+
+
+
+    }
+
+    #AdsCard2{
+        margin-top: 60px;
+        width:600px;
+    }
+
+
+    #AdsCard3{
+        /*background-color: powderblue;*/
+    }
     /*.arrowText{*/
     /*    margin-right: 30px;*/
 
     /*}*/
+
+
+    #AdsSubmitButton{
+        border-radius: 50px;
+        height: 60px;
+        width: 170px;
+        margin-top: 40px;
+        margin-left:60px;
+        padding-bottom: 30px;
+        color: #82A1DB;
+        background-color: white;
+        font-family: Khand, serif;
+
+    }
+
+    #AdsTitle{
+        font-family: Khand, serif;
+    }
+
+    .AdOption{
+        margin-right: 200px;
+        font-size: 20px;
+    }
+
+    #AdsListed{
+        border: solid white 3px;
+        background-color: #82A1DB;
+        font-size: 40px;
+        font-family: Khand, serif;
+        height: auto;
+        width: 900px;
+        margin-left:-170px;
+        margin-top: 140px;
+        margin-bottom: 50px;
+        padding: 30px;
+        position:absolute;
+
+    }
+    #AdsSearchTitle{
+        font-size: 50px;
+    }
+
+    #AdsSubmitForm{
+        margin-bottom: 50px;
+        color:white;
+        font-family: Khand, serif;
+    }
+
+    #AdViewButton{
+
+        background-color: #E5EAD8;
+        border-radius: 50px;
+        height: 60px;
+        width: 170px;
+
+    }
+
     .arrow{
         color:white;
         font-family: 'Khand', sans-serif;
@@ -42,9 +142,13 @@
         font-size: 40px;
     }
 
-    .card{
-        background-color: #82A1DB;
-    }
+    /*.card{*/
+    /*    background-color: #82A1DB;*/
+    /*    margin-top: 100px;*/
+    /*    -webkit-box-shadow: -1px 10px 10px -3px #777;*/
+    /*    -moz-box-shadow: -1px 10px 10px -3px #777;*/
+    /*    box-shadow: -1px 10px 10px -3px #777;*/
+    /*}*/
 
     .card-body{
         color:white;
@@ -73,6 +177,52 @@
         margin-left: -500px;
         margin-top: 450px;
 
+    }
+
+    #CreateBrain img{
+       margin-top: -250px;
+       margin-left: -490px;
+       height: 1200px
+
+
+    }
+    #CreateBrain{
+        height: 1200px;
+        margin-top: 350px;
+        opacity: 0.5;
+        position: static;
+        /*margin-bottom: 500px;*/
+    }
+
+    #CreateButton{
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 20px;
+        font-family:'Khand', sans-serif; ;
+    }
+
+    #CreateCard{
+        background-color: #82A1DB;
+        font-family: 'Khand', sans-serif;
+        color:white;
+        width: 2050px;
+        height: 750px;
+        padding: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    .CreateInput{
+        font-size: 30px;
+    }
+
+    #CreateNewAd{
+        font-size: 50px;
+    }
+
+    .CreateTitleCategory{
+        font-size: 30px;
     }
 
     .container{
@@ -105,6 +255,56 @@
 
     }
 
+    #EditCancelButton{
+        margin-left: 35px;
+    }
+
+    .EditButtonCancel{
+        width: 300px;
+        font-size: 50px;
+        background-color: white;
+        color: #82A1DB;
+        border-radius: 35px;
+        margin-top: 30px;
+        font-family:'Khand', sans-serif;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+    #EditAdContainer{
+        font-family: Khand, serif;
+        background-color: #82A1DB;
+        width:800px;
+        height: 690px;
+        padding: 80px;
+        margin-left: 100px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    #EditCat{
+        font-size: 40px;
+    }
+
+    #EditDescrp{
+        font-size: 40px;
+    }
+
+    #EditTitle{
+        font-size: 40px;
+    }
+
+
+
+     #EditFont{
+         font-family: Khand, serif;
+         font-size: 70px;
+     }
+    .form-control{
+        font-size:40px;
+    }
+
     #facelogo img{
         height:170px;
         width: 170px;
@@ -123,8 +323,8 @@
 
     hr {
         background-color: white;
-        margin-left: -30px;
-        margin-right: -20px;
+        margin-left: -40px;
+        margin-right: -10px;
     }
 
 
@@ -139,6 +339,10 @@
     }
 
 
+    #HomeCard{
+        background-color: #82A1DB;
+    }
+
     /*img {*/
     /*    width: auto;*/
     /*    height: 700px;*/
@@ -148,7 +352,7 @@
     #Loginbutton{
         background-color: white;
         color: #82A1DB;
-        border-radius: 20px;
+        border-radius: 30px;
         font-family:'Khand', sans-serif; ;
     }
 
@@ -170,8 +374,8 @@
 
     #LoginContainer{
         background-color: #82A1DB;
-        height: 400px;
-        padding: 50px;
+        height: 500px;
+        padding: 80px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
         -moz-box-shadow: -1px 10px 10px -3px #777;
         box-shadow: -1px 10px 10px -3px #777;
@@ -286,14 +490,138 @@
         margin-bottom: -40px;
     }
 
+    #ProfileAdsCard{
+        color: black;
+        height: auto;
+        width: 700px;
+        margin-top: 850px;
+        margin-bottom: -200px;
+        /*margin-left: 20px;*/
+        /*margin-bottom: -100px;*/
+        margin-right: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+        position:absolute;
+        background-color: white;
 
-    #WordLogin {
-        margin-right: -40px;
-        margin-left: 10px;
-    }{
+
 
     }
 
+    #gap{
+        padding:0;
+        /*margin-top: -20px;*/
+        margin-left: -20px;
+        margin-right: -20px;
+        /*margin-bottom: 30px;*/
+        width: auto;
+        height:50px;
+        background-color: #82A1DB;
+
+    }
+
+    #ProfileBrain{
+        height: 1200px;
+        margin-top: -200px;
+        /*margin-bottom: -500px;*/
+        opacity: 0.5;
+        position: relative;
+        margin-left: -620px;
+    }
+    #ProfileBrain img{
+        height:1200px;
+        position: relative;
+    }
+    #ProfileCard{
+        font-size: 50px;
+        border: white solid 6px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+
+
+    }
+
+    #ProfileCardBody{
+        /*width:700px;*/
+        /*height: 400px;*/
+        margin-bottom: 30px;
+        position:absolute;
+        background-color: white;
+    }
+
+
+    .ProfileCardFont{
+        color:black;
+    }
+    .ProfileCreateAdButton{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 30px;
+        height: 50px;
+        width: 200px;
+        margin-top: 30px;
+        background-color: white;
+        margin-left: 70px;
+        border-radius: 50px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    #ProfileCard{
+        width:700px;
+        height: 700px;
+        margin-left: 150px;
+        font-family: Ubuntu, serif;
+        background-color: #82A1DB;
+    }
+
+    .ProfileDeleteEditButton{
+        font-family: 'Ubuntu', sans-serif;
+        height: 70px;
+        width: 400px;
+        background-color: #82A1DB;
+        border-radius: 50px;
+        color:white;
+        margin-left: 120px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
+
+    #ProfileEmail{
+        font-size: 30px;
+        margin-left: 90px;
+        margin-top: -59px;
+    }
+
+    #ProfileEmailLogo{
+        width:50px;
+        margin-top: 50px;
+    }
+
+
+    #ProfileImage{
+        border-radius: 50%;
+        width: 270px;
+        height: 270px;
+        align-content: center;
+        margin-left: 220px;
+        margin-top: 50px;
+    }
+
+    #ProfileWelcome{
+        font-family: 'Ubuntu', sans-serif;
+        color:white;
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+
+    #ProfileSpace{
+        width:400px;
+        margin-top: 50px;
+    }
     #twitlogo img{
         height:170px;
         width: 170px;
@@ -302,7 +630,13 @@
 
     }
 
-@media screen and (min-width: 992px){
+    #WordLogin {
+        margin-right: -40px;
+        margin-left: 10px;
+    }
+
+
+    @media screen and (min-width: 992px){
 
 
     #navLister{
