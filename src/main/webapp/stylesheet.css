@@ -120,6 +120,18 @@
         height: 100px;
 
     }
+    #backBtn{
+        font-family: 'Khand', sans-serif;
+        height: 70px;
+        width: 400px;
+        background-color: #82A1DB;
+        border-radius: 50px;
+        color:white;
+        margin-left: 120px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+    }
 
     body {
         background-color: #E5EAD8;
@@ -621,6 +633,11 @@
     #ProfileSpace{
         width:400px;
         margin-top: 50px;
+    }
+    #singleAd{
+        display: flex;
+
+
     }
     #twitlogo img{
         height:170px;

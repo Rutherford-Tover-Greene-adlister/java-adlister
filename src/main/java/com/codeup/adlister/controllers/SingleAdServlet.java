@@ -25,4 +25,15 @@ public class SingleAdServlet extends HttpServlet {
         request.setAttribute("catData", DaoFactory.getAdsDao().allCategories());
         request.getRequestDispatcher("/WEB-INF/ads/singleAd.jsp").forward(request, response);
     }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String backBtn = request.getParameter("id");
+
+        if (backBtn.equalsIgnoreCase("Back")){
+            response.sendRedirect("/ads");
+            return;
+        }
+
+        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
+
+    }
 }
