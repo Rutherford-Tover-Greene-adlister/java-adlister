@@ -10,7 +10,7 @@ public class User {
     private String displayPassword;
     private String displayConfirmPassword;
 
-    public User() {
+    public User(long id, String username, String email) {
     }
 
     public User(String username, String email, String password) {

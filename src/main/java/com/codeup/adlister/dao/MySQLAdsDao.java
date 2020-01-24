@@ -20,10 +20,6 @@ public class MySQLAdsDao implements Ads {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
 
-//                config.getUrl(),
-//                config.getUsername(),
-//                config.getPassword()
-
                     config.getUrl(),
                     config.getUser(),
                     config.getPassword()
@@ -203,13 +199,10 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Category extractCategory(ResultSet rs) throws SQLException {
-//        if (!rs.next()) {
-//            return null;
-//        }
+
         Category returnCat = new Category(
                 rs.getLong("id"),
                 rs.getString("category"));
-//        System.out.println(returnCat.getId());
         return returnCat;
 
     }
@@ -221,7 +214,6 @@ public class MySQLAdsDao implements Ads {
         Category returnCat = new Category(
                 rs.getLong("id"),
                 rs.getString("category"));
-//        System.out.println(returnCat.getId());
         return returnCat;
 
     }
@@ -246,23 +238,52 @@ public class MySQLAdsDao implements Ads {
             stmt.setInt(1, user_id);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
-//            while(rs.next()){
-//                ads.add(
-//                        new Ad(
-//                                rs.getLong("id"),
-//                                rs.getLong("user_id"),
-//                                rs.getString("title"),
-//                                rs.getString("description")
-//                        )
-//                );
-//            }
-//            return ads;
 
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a user by username", e);
         }
 
     }
+
+    //set pictures for single ad for a specific category
+    @Override
+    public String getImageForCategory(long category_id) {
+        String picturePath = "";
+        switch ((int) category_id){
+            case 1:
+                picturePath = "../images/music-ad.jpg";
+                break;
+            case 2:
+                picturePath = "../images/sports-ad.jpg";
+                break;
+            case 3:
+                picturePath = "../images/art-ad.jpg";
+                break;
+            case 4:
+                picturePath = "../images/math-ad.jpg";
+                break;
+            case 5:
+                picturePath = "../images/science-ad.jpg";
+                break;
+            case 6:
+                picturePath = "../images/history-ad.jpg";
+                break;
+            case 7:
+                picturePath = "../images/languages-ad.jpg";
+                break;
+            case 8:
+                picturePath = "../images/programming-ad.jpg";
+                break;
+
+            default:
+                picturePath = "../images/other-ad.png";
+
+
+        }
+        return picturePath;
+
+    }
+
 
 
     public static void main(String[] args) {

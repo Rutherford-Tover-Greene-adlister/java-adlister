@@ -13,7 +13,13 @@
 
     <div class="container">
         <h1>Create a new Ad</h1>
-        <form action="/ads/create" class="needs-validation" method="post" novalidate>
+
+<%--    <form action="/ads/create" method="post">--%>
+<%--        <form action="/create" method="post">--%>
+
+<%--        <form action="/ads/create" class="needs-validation" method="post" novalidate>--%>
+        <form action="/create" class="needs-validation" method="post" novalidate>
+
             <div class="form-group">
                 <label for="title">Title</label>
                 <input id="title" name="title" class="form-control" <c:if test="${title != null}">value="${title}"</c:if> type="text" required>
@@ -48,6 +54,7 @@
     </div>
 
 
+
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
@@ -68,11 +75,6 @@
         }, false);
     })();
 </script>
-
-
-
-
-
 
 </body>
 </html>
