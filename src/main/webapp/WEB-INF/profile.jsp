@@ -14,6 +14,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="card" id="ProfileCard">
 
+
     <h1 id="ProfileWelcome">Welcome, ${sessionScope.user.username}!</h1>
 
         <img src="images/man.jpeg" class="card-img-top" alt="..." id="ProfileImage">
@@ -24,25 +25,31 @@
 <%--    <p class="ProfileCard">User Information: </p>--%>
     <p class="ProfileCard"><img src="images/email.png" id="ProfileEmailLogo"><div id="ProfileEmail">${user.email} </p> </div>
     <a href="/create"><button class="ProfileCreateAdButton">Create Ad</button></a>
-    <a href="/create"><button class="ProfileCreateAdButton">Edit Profile</button></a>
+    <a href="/editProfile"><button class="ProfileCreateAdButton">Edit Profile</button></a>
+
+
+<%--    <a href="/create"><button class="ProfileCreateAdButton">Edit Profile</button></a> --%>
+
         </div>
     </div>
 
 
-<div class="container">
-    <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <p>User Information: </p>
-    <p>Email: ${user.email}</p>
-<%--    <a href="/ads/create"><button>Create Ad</button></a>--%>
+
+<%--<div class="container">--%>
+<%--    <h1>Welcome, ${sessionScope.user.username}!</h1>--%>
+<%--    <p>User Information: </p>--%>
+<%--    <p>Email: ${user.email}</p>--%>
+<%--&lt;%&ndash;    <a href="/ads/create"><button>Create Ad</button></a>&ndash;%&gt;--%>
+
 <%--    <a href="/create"><button>Create Ad</button></a>--%>
 
 
 
-<div><img src="images/brain.png" id="ProfileBrain"> </div>
+<%--<div><img src="images/brain.png" id="ProfileBrain"> </div>--%>
 
 
-<div class="card" id="ProfileAdsCard">
-    <div class="card-body" class="ProfileCardFont" id="ProfileCardBody">
+<div class="card " id="ProfileAdsCard">
+    <div class="ProfileC card-body " class="ProfileCardFont" id="ProfileCardBody">
     <c:forEach var="ad" items="${ads}">
             <h1 class="ProfileCardFont">Title:${ad.title}</h1>
             <h2 class="ProfileCardFont"> Category:${ad.categoryName}</h2>
@@ -57,9 +64,11 @@
             <form action="editAd" method="GET">
                 <button name="adEdit" value="${ad.id}"class="ProfileDeleteEditButton">Edit Ad</button>
             </form>
+<%--        <img src="images/brain.png" id="ProfileSmallBrain">--%>
+
         <div id="gap"> </div>
 
-        <hr id="AdsHrLine">
+<%--        <hr id="AdsHrLine">--%>
 
     </c:forEach>
 
