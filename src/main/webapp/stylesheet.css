@@ -2,26 +2,29 @@
         margin-top: 50px;
         height:100px;
         font-size: 40px;
-        /*background-color: #82A1DB;*/
+
+    }
+
+    #AdBox{
+       border: solid white 3px;
+        margin-bottom: 30px;
+        padding-top: 30px;
 
     }
 
     #AdsBrain{
-        position:relative;
-        height: 1200px;
-        margin-top: -500px;
-        /*margin-bottom: -500px;*/
+        height: 100px;
+        margin-top: -120px;
         opacity: 0.5;
-        margin-left: -620px;
+        margin-left: 670px;
+        margin-right: -700px
     }
 
     #AdsBrain img{
         height:1200px;
-        position: relative;
     }
 
     #AdsCardBody{
-        /*background-color: darkred;*/
     }
 
     #AdsCard{
@@ -46,12 +49,8 @@
 
 
     #AdsCard3{
-        /*background-color: powderblue;*/
     }
-    /*.arrowText{*/
-    /*    margin-right: 30px;*/
 
-    /*}*/
 
 
     #AdsSubmitButton{
@@ -59,15 +58,19 @@
         height: 60px;
         width: 170px;
         margin-top: 40px;
-        margin-left:60px;
+        margin-left:40px;
         padding-bottom: 30px;
         color: #82A1DB;
         background-color: white;
         font-family: Khand, serif;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
 
     }
 
     #AdsTitle{
+
         font-family: Khand, serif;
     }
 
@@ -142,13 +145,7 @@
         font-size: 40px;
     }
 
-    /*.card{*/
-    /*    background-color: #82A1DB;*/
-    /*    margin-top: 100px;*/
-    /*    -webkit-box-shadow: -1px 10px 10px -3px #777;*/
-    /*    -moz-box-shadow: -1px 10px 10px -3px #777;*/
-    /*    box-shadow: -1px 10px 10px -3px #777;*/
-    /*}*/
+
 
     .card-body{
         color:white;
@@ -169,7 +166,6 @@
         margin-top: 250px;
         opacity: 0.5;
         position: static;
-        /*margin-bottom: 500px;*/
 
 
     }
@@ -191,7 +187,6 @@
         margin-top: 350px;
         opacity: 0.5;
         position: static;
-        /*margin-bottom: 500px;*/
     }
 
     #CreateButton{
@@ -227,7 +222,6 @@
 
     .container{
         height:700px;
-        /*width:1500px;*/
     }
 
     .carouselBox{
@@ -244,11 +238,10 @@
     }
 
     .carousel-caption {
-        position: relative;
+        position: ;
         left: 0;
         top: 0;
         width: 700px;
-        /*height: 300px;*/
         margin-left: 140px;
         font-size: 50px;
         margin-top: 200px;
@@ -343,11 +336,7 @@
         background-color: #82A1DB;
     }
 
-    /*img {*/
-    /*    width: auto;*/
-    /*    height: 700px;*/
 
-    /*}*/
 
     #Loginbutton{
         background-color: white;
@@ -360,7 +349,6 @@
     #LoginBrain img{
         height: 1200px;
         margin-top: 50px;
-        /*margin-bottom: -500px;*/
         opacity: 0.5;
         position: static;
 
@@ -441,7 +429,7 @@
         font-family: "Concert One", serif;
         font-size: 110px;
         margin-top: -20px;
-        margin-left: 340px;
+        margin-left: 330px;
 
 
     }
@@ -449,9 +437,7 @@
     #NavLogin {
         margin-right: -30px;
         margin-left: 40px;
-        /*margin-left: 40px;*/
         margin-bottom: -50px;
-        /*margin-top: -20px;*/
 
 
     }
@@ -461,8 +447,6 @@
     }
 
     #NavLogout {
-        /*margin-bottom: 10px;*/
-        /*padding-bottom: -10px;*/
     }
 
     #NavLogoutContainer {
@@ -472,18 +456,10 @@
 
     .NavFontLoginLogout {
 
-        /*border-radius: 50%;*/
         color: white;
-        /*display: inline;*/
         font-family: 'Khand', sans-serif;
         font-size: 40px;
-        /*border: white solid 1px;*/
-        /*width:250px;*/
-        /*height: 250px;*/
         margin-right: 40px;
-        /*margin-top: 90px;*/
-        /*margin-bottom: 29px;*/
-
     }
 
     #NavLoginLogoutContainer {
@@ -496,8 +472,7 @@
         width: 700px;
         margin-top: 850px;
         margin-bottom: -200px;
-        /*margin-left: 20px;*/
-        /*margin-bottom: -100px;*/
+
         margin-right: 50px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
         -moz-box-shadow: -1px 10px 10px -3px #777;
@@ -507,14 +482,13 @@
 
 
 
+
     }
 
     #gap{
         padding:0;
-        /*margin-top: -20px;*/
         margin-left: -20px;
         margin-right: -20px;
-        /*margin-bottom: 30px;*/
         width: auto;
         height:50px;
         background-color: #82A1DB;
@@ -524,7 +498,6 @@
     #ProfileBrain{
         height: 1200px;
         margin-top: -200px;
-        /*margin-bottom: -500px;*/
         opacity: 0.5;
         position: relative;
         margin-left: -620px;
@@ -544,24 +517,35 @@
     }
 
     #ProfileCardBody{
-        /*width:700px;*/
-        /*height: 400px;*/
+
         margin-bottom: 30px;
         position:absolute;
         background-color: white;
+
     }
 
 
     .ProfileCardFont{
         color:black;
+        font-family: 'Khand', sans-serif;
+
+
     }
+
+    .ProfileC{
+
+        /*border: solid black 3px;*/
+
+    }
+
     .ProfileCreateAdButton{
+        background-color: #E5EAD8;
         font-family: 'Ubuntu', sans-serif;
         font-size: 30px;
         height: 50px;
         width: 200px;
         margin-top: 30px;
-        background-color: white;
+        /*background-color: white;*/
         margin-left: 70px;
         border-radius: 50px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
@@ -578,7 +562,7 @@
     }
 
     .ProfileDeleteEditButton{
-        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Khand', sans-serif;
         height: 70px;
         width: 400px;
         background-color: #82A1DB;
@@ -616,6 +600,14 @@
         color:white;
         margin-left: 200px;
         margin-top: 50px;
+    }
+
+    #ProfileSmallBrain{
+        height: 100px;
+        margin-top: -550px;
+        opacity: 0.5;
+        margin-left: 570px;
+        margin-right: -400px
     }
 
     #ProfileSpace{

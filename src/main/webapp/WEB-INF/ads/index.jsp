@@ -14,7 +14,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container" id="AdsCard">
-    <h1 id="AdsTitle">Here Are all the ads!</h1>
+    <h1 id="AdsTitle">Find your next Lesson!</h1>
     <div class="row">
         <form action="/ads" method="post" id="AdsSubmitForm" class="mx-auto">
             <h4 id="AdsSearchTitle">Search</h4>
@@ -26,16 +26,18 @@
                 </c:forEach>
                 <option selected value="all" class="AdOption">All</option>
             </select>
-            <input type="submit" class="btn  " id="AdsSubmitButton" >
+            <input type="submit" class="btn" id="AdsSubmitButton" >
             </div>
         </form>
     </div>
-    <div class="row" id="AdsListed">
+    <div class="row" id="AdsListed" >
 
-        <img src="../images/brain.png" id="AdsBrain">
 
         <c:forEach var="ad" items="${ads}">
-            <div class="col-md-6">
+
+            <div class="col-col px-md-5" id="Adbox">
+
+
 
                 <h2>Title: ${ad.title}</h2>
                 <h3>Category:${ad.categoryName}</h3>
@@ -46,6 +48,7 @@
                     <input type="hidden" name="adId" value="${ad.id}" >
                     <input type="submit" value="View" id="AdViewButton">
                 </form>
+                <img src="../images/brain.png" id="AdsBrain">
             </div>
 
 
