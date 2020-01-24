@@ -13,7 +13,8 @@
 
     <div class="container">
         <h1>Create a new Ad</h1>
-        <form action="/ads/create" method="post">
+<%--    <form action="/ads/create" method="post">--%>
+        <form action="/create" method="post">
             <div class="form-group">
                 <label for="title">Title</label>
                 <input id="title" name="title" class="form-control" type="text">
@@ -39,14 +40,6 @@
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

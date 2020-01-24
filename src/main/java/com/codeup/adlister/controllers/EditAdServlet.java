@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.lang.String;
 
 
-
-
 @WebServlet(urlPatterns = "/editAd")
 public class EditAdServlet extends HttpServlet {
 
@@ -25,16 +23,17 @@ public class EditAdServlet extends HttpServlet {
     }
 
 
-
     @Override
     protected void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String ad_id = request.getParameter("id");
         Long id = Long.parseLong(ad_id);
 
+        //set parameters for edit page
         String title = request.getParameter("title");
         Long category = Long.parseLong(request.getParameter("categories"));
         String description = request.getParameter("description");
 
+        //redirect to the profile after updating
         DaoFactory.getAdsDao().editAd(id, title, category, description);
         response.sendRedirect("/profile");
 

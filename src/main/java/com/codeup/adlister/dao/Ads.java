@@ -30,7 +30,8 @@ public interface Ads {
     //find by username
     List<Ad> findByUsername(int user_id);
 
-
+    //assign pictures to a specific category
+    String getImageForCategory(long category_id);
 
 
 

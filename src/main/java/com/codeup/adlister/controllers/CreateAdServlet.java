@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
+//@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
+@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {

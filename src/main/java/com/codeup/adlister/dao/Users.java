@@ -9,4 +9,6 @@ public interface Users {
     Long insert(User user);
     Boolean checkUniqueUser(String username);
     User findByUserId (long id);
+
+    void editProfile(long id, String username, String email);
 }
