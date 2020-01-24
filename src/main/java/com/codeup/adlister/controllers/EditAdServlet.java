@@ -25,6 +25,11 @@ public class EditAdServlet extends HttpServlet {
 
     @Override
     protected void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String cancelBtn = request.getParameter("id");
+        if (cancelBtn.equalsIgnoreCase("cancel")){
+            response.sendRedirect("/profile");
+            return;
+        }
         String ad_id = request.getParameter("id");
         Long id = Long.parseLong(ad_id);
 

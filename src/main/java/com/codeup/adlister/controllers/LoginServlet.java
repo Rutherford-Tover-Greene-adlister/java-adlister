@@ -42,15 +42,16 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-//        String test = Password.hash(user.getPassword());
-//        boolean validAttempt = Password.check(password, test);
         boolean validAttempt = Password.check(password, user.getPassword());
 
         if (validAttempt) {
 
             request.getSession().setAttribute("user", user);
-//            response.sendRedirect(referer);
-//            response.sendRedirect("/profile");
+            if (returnPage.equalsIgnoreCase("http://localhost:8080/register")){
+                response.sendRedirect("/login");
+                return;
+            }
+
             response.sendRedirect(returnPage);
         } else {
             failLogin = username;

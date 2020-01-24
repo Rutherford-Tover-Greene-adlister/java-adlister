@@ -27,8 +27,12 @@
     <a href="/create"><button class="ProfileCreateAdButton">Create Ad</button></a>
     <a href="/editProfile"><button class="ProfileCreateAdButton">Edit Profile</button></a>
 
+
+<%--    <a href="/create"><button class="ProfileCreateAdButton">Edit Profile</button></a> --%>
+
         </div>
     </div>
+
 
 
 <%--<div class="container">--%>
@@ -36,6 +40,7 @@
 <%--    <p>User Information: </p>--%>
 <%--    <p>Email: ${user.email}</p>--%>
 <%--&lt;%&ndash;    <a href="/ads/create"><button>Create Ad</button></a>&ndash;%&gt;--%>
+
 <%--    <a href="/create"><button>Create Ad</button></a>--%>
 
 
@@ -48,7 +53,7 @@
     <c:forEach var="ad" items="${ads}">
             <h1 class="ProfileCardFont">Title:${ad.title}</h1>
             <h2 class="ProfileCardFont"> Category:${ad.categoryName}</h2>
-            <p class="ProfileCardFont">Descripition:${ad.description}</p>
+            <p class="ProfileCardFont">Description:${ad.description}</p>
 
             <%-- delete ad--%>
             <form action="deleteAd" method="post">
