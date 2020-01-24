@@ -43,7 +43,7 @@
     </div>
 
     <button name="id" value="${ad.id}" class="EditButtonCancel">Update</button>
-    <button class="EditButtonCancel" id="EditCancelButton">Cancel</button>
+    <button class="EditButtonCancel" id="EditCancelButton" name="id" value="Cancel">Cancel</button>
 </form>
 
 <form method="get" action="profile">
