@@ -12,7 +12,6 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-
 <div class="card" id="ProfileCard">
 
     <h1 id="ProfileWelcome">Welcome, ${sessionScope.user.username}!</h1>
@@ -29,8 +28,13 @@
         </div>
     </div>
 
+
+
+<div><img src="images/brain.png" id="ProfileBrain"> </div>
+
+
 <div class="card" id="ProfileAdsCard">
-    <div class="card-body" class="ProfileCardFont">
+    <div class="card-body" class="ProfileCardFont" id="ProfileCardBody">
     <c:forEach var="ad" items="${ads}">
             <h1 class="ProfileCardFont">Title:${ad.title}</h1>
             <h2 class="ProfileCardFont"> Category:${ad.categoryName}</h2>
@@ -45,12 +49,16 @@
             <form action="editAd" method="GET">
                 <button name="adEdit" value="${ad.id}"class="ProfileDeleteEditButton">Edit Ad</button>
             </form>
+        <div id="gap"> </div>
+
+        <hr id="AdsHrLine">
 
     </c:forEach>
 
-    </div>
-</div>
 
+         </div>
+
+    </div>
 
 
 

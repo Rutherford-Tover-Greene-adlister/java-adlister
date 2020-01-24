@@ -13,37 +13,51 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
+<div class="container" id="AdsCard">
+    <h1 id="AdsTitle">Here Are all the ads!</h1>
     <div class="row">
-        <form action="/ads" method="post">
-            <h4>Search</h4>
-            <label for="catSort">Category</label>
+        <form action="/ads" method="post" id="AdsSubmitForm" class="mx-auto">
+            <h4 id="AdsSearchTitle">Search</h4>
+<%--            <label for="catSort">Category</label>--%>
+            <div id="AdOption">
             <select id="catSort" name="catSort" class="form-control">
                 <c:forEach var="cat" items="${catSelects}">
                     <option value="${cat.category}">${cat.category}</option>
                 </c:forEach>
-                <option selected value="all">All</option>
+                <option selected value="all" class="AdOption">All</option>
             </select>
-            <input type="submit" class="btn btn-block btn-primary">
+            <input type="submit" class="btn  " id="AdsSubmitButton" >
+            </div>
         </form>
     </div>
-    <div class="row">
+    <div class="row" id="AdsListed">
+
+        <img src="../images/brain.png" id="AdsBrain">
+
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <h3>${ad.categoryName}</h3>
-                <p>${ad.description}</p>
+                <h2>Title: ${ad.title}</h2>
+                <h3>Category:${ad.categoryName}</h3>
+                <p>Description:${ad.description}</p>
                     <%-- View Ad Button --%>
+
+
                 <form action="/ads/singleAd" method="get">
                     <input type="hidden" name="adId" value="${ad.id}" >
-                    <input type="submit" value="View">
+                    <input type="submit" value="View" id="AdViewButton">
                 </form>
             </div>
+
+
         </c:forEach>
-    </div>
+
+
 
 </div>
+
+
+</div>
+
 
 </body>
 </html>

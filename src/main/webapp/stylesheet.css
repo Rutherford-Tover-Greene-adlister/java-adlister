@@ -6,10 +6,109 @@
 
     }
 
+    #AdsBrain{
+        position:relative;
+        height: 1200px;
+        margin-top: -500px;
+        /*margin-bottom: -500px;*/
+        opacity: 0.5;
+        margin-left: -620px;
+    }
+
+    #AdsBrain img{
+        height:1200px;
+        position: relative;
+    }
+
+    #AdsCardBody{
+        /*background-color: darkred;*/
+    }
+
+    #AdsCard{
+        background-color: #82A1DB;
+        width: 600px;
+        height: 340px;
+        color:white;
+        margin-top: 70px;
+        -webkit-box-shadow: -1px 10px 10px -3px #777;
+        -moz-box-shadow: -1px 10px 10px -3px #777;
+        box-shadow: -1px 10px 10px -3px #777;
+
+
+
+
+    }
+
+    #AdsCard2{
+        margin-top: 60px;
+        width:600px;
+    }
+
+
+    #AdsCard3{
+        /*background-color: powderblue;*/
+    }
     /*.arrowText{*/
     /*    margin-right: 30px;*/
 
     /*}*/
+
+
+    #AdsSubmitButton{
+        border-radius: 50px;
+        height: 60px;
+        width: 170px;
+        margin-top: 40px;
+        margin-left:60px;
+        padding-bottom: 30px;
+        color: #82A1DB;
+        background-color: white;
+        font-family: Khand, serif;
+
+    }
+
+    #AdsTitle{
+        font-family: Khand, serif;
+    }
+
+    .AdOption{
+        margin-right: 200px;
+        font-size: 20px;
+    }
+
+    #AdsListed{
+        border: solid white 3px;
+        background-color: #82A1DB;
+        font-size: 40px;
+        font-family: Khand, serif;
+        height: auto;
+        width: 900px;
+        margin-left:-170px;
+        margin-top: 140px;
+        margin-bottom: 50px;
+        padding: 30px;
+        position:absolute;
+
+    }
+    #AdsSearchTitle{
+        font-size: 50px;
+    }
+
+    #AdsSubmitForm{
+        margin-bottom: 50px;
+        color:white;
+        font-family: Khand, serif;
+    }
+
+    #AdViewButton{
+
+        background-color: #E5EAD8;
+        border-radius: 50px;
+        height: 60px;
+        width: 170px;
+
+    }
+
     .arrow{
         color:white;
         font-family: 'Khand', sans-serif;
@@ -253,7 +352,7 @@
     #Loginbutton{
         background-color: white;
         color: #82A1DB;
-        border-radius: 20px;
+        border-radius: 30px;
         font-family:'Khand', sans-serif; ;
     }
 
@@ -404,17 +503,30 @@
         -moz-box-shadow: -1px 10px 10px -3px #777;
         box-shadow: -1px 10px 10px -3px #777;
         position:absolute;
+        background-color: white;
 
 
 
     }
 
+    #gap{
+        padding:0;
+        /*margin-top: -20px;*/
+        margin-left: -20px;
+        margin-right: -20px;
+        /*margin-bottom: 30px;*/
+        width: auto;
+        height:50px;
+        background-color: #82A1DB;
+
+    }
+
     #ProfileBrain{
         height: 1200px;
-        margin-top: -250px;
+        margin-top: -200px;
         /*margin-bottom: -500px;*/
         opacity: 0.5;
-
+        position: relative;
         margin-left: -620px;
     }
     #ProfileBrain img{
@@ -423,15 +535,20 @@
     }
     #ProfileCard{
         font-size: 50px;
+        border: white solid 6px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
         -moz-box-shadow: -1px 10px 10px -3px #777;
         box-shadow: -1px 10px 10px -3px #777;
+
 
     }
 
     #ProfileCardBody{
         /*width:700px;*/
         /*height: 400px;*/
+        margin-bottom: 30px;
+        position:absolute;
+        background-color: white;
     }
 
 
@@ -445,6 +562,7 @@
         width: 200px;
         margin-top: 30px;
         background-color: white;
+        margin-left: 70px;
         border-radius: 50px;
         -webkit-box-shadow: -1px 10px 10px -3px #777;
         -moz-box-shadow: -1px 10px 10px -3px #777;
@@ -486,8 +604,8 @@
 
     #ProfileImage{
         border-radius: 50%;
-        width: 250px;
-        height: 250px;
+        width: 270px;
+        height: 270px;
         align-content: center;
         margin-left: 220px;
         margin-top: 50px;
@@ -500,6 +618,10 @@
         margin-top: 50px;
     }
 
+    #ProfileSpace{
+        width:400px;
+        margin-top: 50px;
+    }
     #twitlogo img{
         height:170px;
         width: 170px;
